@@ -91,7 +91,7 @@ export function EditUserDialog({
   }
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      <AlertDialogContent className="max-w-2xl">
+      <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Edit User</AlertDialogTitle>
           <AlertDialogDescription>
@@ -105,7 +105,7 @@ export function EditUserDialog({
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-6"
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 min-[450px]:grid-cols-2">
               <Field data-invalid={!!errors.firstName}>
                 <FieldLabel htmlFor="firstName">First Name</FieldLabel>
                 <Input

@@ -11,7 +11,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useUsersStore } from "@/lib/store";
 import type { User } from "@/lib/types";
 
@@ -49,8 +49,12 @@ export function DeleteUserDialog({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={handleDelete} asChild>
-            <Button variant="destructive">Delete</Button>
+          <AlertDialogAction
+            onClick={handleDelete}
+            className={buttonVariants({ variant: "destructive" })}
+            asChild
+          >
+            <Button>Delete</Button>
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

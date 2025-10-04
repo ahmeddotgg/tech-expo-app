@@ -22,17 +22,17 @@ export function UserDetailsDialog({
 }: UserDetailsDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>User Details</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-balance">
             Complete information about the user
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
           {/* Profile Section */}
-          <div className="flex items-start gap-4">
+          <div className="flex flex-col items-start gap-4 min-[423px]:flex-row min-[423px]:items-center">
             <Image
               src={user.image}
               alt={`${user.firstName} ${user.lastName}`}
@@ -40,11 +40,13 @@ export function UserDetailsDialog({
               height={80}
               className="rounded-full"
             />
-            <div className="flex-1">
-              <h3 className="font-semibold text-2xl">
+            <div>
+              <h3 className="font-bold text-2xl">
                 {user.firstName} {user.lastName}
               </h3>
-              <p className="text-muted-foreground">ID: {user.id}</p>
+              <p className="text-balance font-medium text-muted-foreground text-xs">
+                ID: {user.id}
+              </p>
             </div>
           </div>
 
@@ -54,7 +56,7 @@ export function UserDetailsDialog({
             <div className="grid gap-3">
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm">{user.email}</span>
+                <span className="truncate text-sm">{user.email}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-muted-foreground" />
@@ -71,10 +73,10 @@ export function UserDetailsDialog({
           <div className="space-y-3">
             <h4 className="font-semibold text-lg">Address</h4>
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 text-muted-foreground" />
+              <MapPin className="size-4 text-muted-foreground" />
               <div className="text-sm">
                 <p>{user.address.address}</p>
-                <p>
+                <p className="truncate">
                   {user.address.city}, {user.address.state}
                 </p>
               </div>
