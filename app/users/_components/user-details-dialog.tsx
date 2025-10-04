@@ -39,6 +39,7 @@ export function UserDetailsDialog({
               width={80}
               height={80}
               className="rounded-full"
+              unoptimized
             />
             <div>
               <h3 className="font-bold text-2xl">
