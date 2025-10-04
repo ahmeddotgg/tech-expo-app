@@ -113,7 +113,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="flex flex-col gap-2 min-[500px]:flex-row min-[500px]:items-center min-[500px]:justify-between">
         <Input
           placeholder="Search by name, email, or job..."
@@ -268,7 +268,7 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex flex-col-reverse items-start justify-between gap-2 min-[485px]:flex-row min-[485px]:items-center min-[485px]:justify-between">
-        <div className="font-medium text-muted-foreground text-sm">
+        <div className="text-muted-foreground text-sm">
           <span>{table.getState().pagination.pageSize} Rows per page</span>
           {" | "}
           <span>

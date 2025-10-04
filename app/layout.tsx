@@ -44,7 +44,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                 <SidebarTrigger />
                 <ThemeSwitcher />
               </header>
-              <main className="w-full flex-1 p-6">{children}</main>
+              <main className="w-full flex-1 px-4 pt-18 sm:px-12">
+                {children}
+              </main>
               <Toaster richColors position="top-center" />
             </SidebarInset>
           </SidebarProvider>
